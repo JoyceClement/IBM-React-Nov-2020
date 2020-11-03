@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Products</title>
+    <script src="react.development.js"></script>
+    <script src="react-dom.development.js"></script>
+    <script src="babel.min.js"></script>
+    <script type="text/babel">
+        class Products extends React.Component{
+              state = {
+                  prodList:[],
+                  newValue:''
+              }
+              onUserChangeHandler =(event) =>{
+                 let newProd = event.target.value
+                 this.setState({newValue:newProd})
+               }
+               onProdAddItem =() =>{
+                
+                let prodListItem =[...this.state.prodList]
+                prodListItem.push(this.state.newValue)
+                this.setState({prodList:prodListItem})
+                
+               }
+            render(){
+               const { prodList } = this.state;
+               const productList = prodList.map((productName,index)=> (<li key={index}>{productName}</li>));
+               return(
+                <div>
+                     <h1>Add  Products Name Here:</h1>
+                     <input type='text' onChange={this.onUserChangeHandler}/>
+                     <input type='button' value= "ADD PRODUCT" onClick={this.onProdAddItem}/>
+                     <hr/>
+                     <ol>
+                        {productList}
+                        </ol>
+                </div>
+               )
+            }
+        }
+        ReactDOM.render(<Products/>, document.getElementById('root'));
+    </script>
+</head>
+<body>
+    <div id="root">
+    </div>
+</body>
+</html>

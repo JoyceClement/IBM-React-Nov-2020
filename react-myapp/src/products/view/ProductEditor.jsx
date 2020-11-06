@@ -1,25 +1,20 @@
 import React, { Component } from 'react';
 
-
 class ProductEditor extends Component {
     state = {
         name: '',
         description: '',
         price: 0,
-        categoryName :''
+        category : 0
     };
 
     onAddNewProductClick = () => {
         const { addNew } = this.props,
-            { name, description, price , categoryName } = this.state;
-        addNew(name, description, price, categoryName);
-    }
-
-    selectChangeHandler = () =>{
-        console.log("jhhjd")
-    }
+            { name, description, price, category } = this.state;
+        addNew(name, description, price, category);
+    };
     render() {
-    const catogoryList = this.props.categoryList.map((categoryName , index) => (<option key={index}> {categoryName.name}</option>));
+      const { categories } = this.props;
         return (
           <section className="edit">
             <div className="field">
@@ -49,8 +44,9 @@ class ProductEditor extends Component {
             </div>
             <div className="field">
               <label htmlFor="">Category</label>
-              <select onChange ={evt => this.setState({categoryName : evt.target.value})} >
-              {catogoryList}
+              <select onChange={evt => this.setState({ category : evt.target.value})}>
+                <option value=""> --- select --- </option>
+                { categories.map(category => (<option key={category.id}>{category.name}</option>)) }
               </select>
             </div>
             <div className="field">

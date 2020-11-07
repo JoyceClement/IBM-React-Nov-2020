@@ -48,7 +48,7 @@ class Categories extends Component{
 }
 
 function mapStateToProps(storeState){
-    const categories = storeState.categories.categoryList
+    const categories = storeState.categories;
     return { categories : categories};
 }
 

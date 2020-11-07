@@ -14,11 +14,15 @@
     },
     {
       "id": 4,
-      "name": "Jye"
+      "name": "El"
     },
     {
       "id": 5,
-      "name": "Jye"
+      "name": "rrew"
+    },
+    {
+      "id": 6,
+      "name": "Testing"
     }
   ],
   "products": [
@@ -93,6 +97,22 @@
       "price": 0,
       "isOutOfStock": false,
       "category": "ju"
+    },
+    {
+      "id": 10,
+      "name": "Fridge",
+      "description": "dasdada",
+      "price": 29,
+      "isOutOfStock": false,
+      "category": "El"
+    },
+    {
+      "id": 11,
+      "name": "Pen ",
+      "description": "ghtyty",
+      "price": 56,
+      "isOutOfStock": false,
+      "category": "Stationary"
     }
   ]
 }

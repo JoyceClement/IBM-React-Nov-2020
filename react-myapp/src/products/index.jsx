@@ -31,10 +31,10 @@ class Products extends Component {
 
 function mapStateToProps(storeState){
     const products = storeState.products,
-        categories = storeState.categories.categoryList,
-        selectedCatgory = storeState.categories.selectedCategory;
-    if (selectedCatgory !== '')
-        return { data : products.filter(p => p.category === selectedCatgory), categories };
+        categories = storeState.categories
+    //     selectedCatgory = storeState.categories.selectedCategory;
+    // if (selectedCatgory !== '')
+    //     return { data : products.filter(p => p.category === selectedCatgory), categories };
     return { data : products, categories};
 }
 
